@@ -276,7 +276,7 @@ namespace Polyglot.Editor
 							if (GUILayout.Button("EDIT TRANSLATIONS", GUILayout.MaxWidth(tam)))
 							{
 								DropDownWindow ddWindow = EditorWindow.GetWindow<DropDownWindow>();
-								ddWindow.Init(t, selectedLanguage);
+								ddWindow.Init(t, selectedLanguage, selectedLanguageCategories);
 							}
 						}
 							

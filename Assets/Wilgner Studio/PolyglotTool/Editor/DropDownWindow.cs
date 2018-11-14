@@ -10,6 +10,7 @@ public class DropDownWindow : EditorWindow {
 	public Translation t;
 	public Vector2 scrollTranslations;
 	public int selectedLanguage;
+	public int selectedLanguageCategories;
 
 	// Save/Load data in ScriptableObject (PolyglotSave)
 	private PolyglotSave polyglot;
@@ -91,17 +92,20 @@ public class DropDownWindow : EditorWindow {
 	void AddElementBrother(int idUniqueElements, int count)
 	{
 		// Scroll through the translations list
-		foreach (Translation t in polyglot.translations)
+		foreach (Translation te in polyglot.translations)
 		{
 			// Check if the translation is from the language selected
-			if (t.indexLanguage != selectedLanguage)
+			if (te.indexLanguage != selectedLanguage)
 			{
 				// Check if the translation is from the selected category
-				if (polyglot.selectedLanguageCategories == t.categories.index)
+				if (selectedLanguageCategories == te.categories.index)
 				{
+					
 					// Check if id's are brothers
-					if (t.idUniqueElements == idUniqueElements)
-						t.dropdownTranslation.Add (string.Format("Option {0}", count));
+					if (te.idUniqueElements == idUniqueElements) {
+						te.dropdownTranslation.Add (string.Format ("Option {0}", count));
+						Debug.Log ("ADD");
+					}
 				}
 			}
 		}
@@ -110,26 +114,27 @@ public class DropDownWindow : EditorWindow {
 	void RemoveElementBrother(int idUniqueElements, int i)
 	{
 		// Scroll through the translations list
-		foreach (Translation t in polyglot.translations)
+		foreach (Translation te in polyglot.translations)
 		{
 			// Check if the translation is from the language selected
-			if (t.indexLanguage != selectedLanguage)
+			if (te.indexLanguage != selectedLanguage)
 			{
 				// Check if the translation is from the selected category
-				if (polyglot.selectedLanguageCategories == t.categories.index)
+				if (selectedLanguageCategories == te.categories.index)
 				{
 					// Check if id's are brothers
-					if (t.idUniqueElements == idUniqueElements)
+					if (te.idUniqueElements == idUniqueElements)
 					{
-						t.dropdownTranslation.RemoveAt (i);
+						te.dropdownTranslation.RemoveAt (i);
 					}
 				}
 			}
 		}
 	}
 
-	public void Init(Translation tn, int selectedLanguage){
+	public void Init(Translation tn, int selectedLanguage, int selectedLanguageCategories){
 		t = tn;
 		this.selectedLanguage = selectedLanguage;
+		this.selectedLanguageCategories = selectedLanguageCategories;
 	}
 }

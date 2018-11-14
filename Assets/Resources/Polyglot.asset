@@ -15,8 +15,8 @@ MonoBehaviour:
   selectedLanguageCategories: 0
   translations:
   - indexLanguage: 0
-    nameID: ExampleID
-    translation: Text
+    nameID: continueId
+    translation: Continue
     idUniqueElements: 0
     isDropdown: 0
     dropdownTranslation: []
@@ -24,8 +24,8 @@ MonoBehaviour:
       index: 0
       name: Menu
   - indexLanguage: 1
-    nameID: ExampleID
-    translation: Texto
+    nameID: continueId
+    translation: Continuar
     idUniqueElements: 0
     isDropdown: 0
     dropdownTranslation: []
@@ -33,37 +33,119 @@ MonoBehaviour:
       index: 0
       name: Menu
   - indexLanguage: 0
-    nameID: Item Id
-    translation: Translation here
+    nameID: newGameId
+    translation: New Game
     idUniqueElements: 1
-    isDropdown: 1
-    dropdownTranslation:
-    - Option 0
-    - Option 1
-    - Option 2
+    isDropdown: 0
+    dropdownTranslation: []
     categories:
       index: 0
       name: Menu
   - indexLanguage: 1
-    nameID: Item Id
-    translation: Translation here
+    nameID: newGameId
+    translation: Novo Jogo
     idUniqueElements: 1
-    isDropdown: 1
-    dropdownTranslation:
-    - "Op\xE7\xE3o 0"
-    - "Op\xE7\xE3o 1"
-    - "Op\xE7\xE3o 2"
+    isDropdown: 0
+    dropdownTranslation: []
     categories:
       index: 0
       name: Menu
+  - indexLanguage: 0
+    nameID: optionsId
+    translation: Options
+    idUniqueElements: 2
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 1
+    nameID: optionsId
+    translation: "Op\xE7\xF5es"
+    idUniqueElements: 2
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 0
+    nameID: creditsId
+    translation: Credits
+    idUniqueElements: 3
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 1
+    nameID: creditsId
+    translation: "Cr\xE9ditos"
+    idUniqueElements: 3
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 0
+    nameID: exitId
+    translation: Exit
+    idUniqueElements: 4
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 1
+    nameID: exitId
+    translation: Sair
+    idUniqueElements: 4
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 0
+    nameID: difficultyId
+    translation: Translation here
+    idUniqueElements: 5
+    isDropdown: 1
+    dropdownTranslation:
+    - Easy
+    - Medium
+    - Hard
+    categories:
+      index: 1
+      name: Options
+  - indexLanguage: 1
+    nameID: difficultyId
+    translation: Translation here
+    idUniqueElements: 5
+    isDropdown: 1
+    dropdownTranslation:
+    - "F\xE1cil"
+    - "M\xE9dio"
+    - "D\xEDficil"
+    categories:
+      index: 1
+      name: Options
   languages:
   - English
   - Portuguese
   languagesCategories:
   - Menu
-  - Game
+  - Options
   idElements:
   - inUse: 1
     id: 0
   - inUse: 1
     id: 1
+  - inUse: 1
+    id: 2
+  - inUse: 1
+    id: 3
+  - inUse: 1
+    id: 4
+  - inUse: 1
+    id: 5
+  - inUse: 0
+    id: 6
