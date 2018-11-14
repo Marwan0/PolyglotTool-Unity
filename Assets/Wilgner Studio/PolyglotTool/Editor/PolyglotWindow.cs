@@ -269,7 +269,17 @@ namespace Polyglot.Editor
 	                    float tam = position.width / 2;
 	                    GUILayout.BeginHorizontal("Box", GUILayout.MaxHeight(20));
 	                    t.nameID = GUILayout.TextField(t.nameID, GUILayout.MaxWidth(tam));
-	                    t.translation = GUILayout.TextField(t.translation, GUILayout.MaxWidth(tam));
+						if(t.isDropdown == false){
+	                    	t.translation = GUILayout.TextField(t.translation, GUILayout.MaxWidth(tam));
+						} else {
+							// If you click the button edit translations of dropdown
+							if (GUILayout.Button("EDIT TRANSLATIONS", GUILayout.MaxWidth(tam)))
+							{
+								DropDownWindow ddWindow = EditorWindow.GetWindow<DropDownWindow>();
+								ddWindow.Init(t, selectedLanguage);
+							}
+						}
+							
 
                         // Changes the brother element in the other languages and get the brother
                         Translation brotherElement = ChangeIdAnotherLanguage(t.idUniqueElements, t.nameID);
@@ -296,6 +306,7 @@ namespace Polyglot.Editor
 
             #region Add New Translation
             GUILayout.BeginVertical();
+			GUILayout.BeginHorizontal();
             // If you click the button to add new translation
             if (GUILayout.Button("Add New Translation"))
 	        {
@@ -316,10 +327,35 @@ namespace Polyglot.Editor
                 // idE.x = id available (Line: 260)
                 // Creates the new translation in all available languages
                 for (int i = 0; i < polyglot.languages.Count; i++) {
-                    Translation element = new Translation(i, "Item Id", "Translation here", idE.x, c);
+                    Translation element = new Translation(i, "Item Id", "Translation here", idE.x, c, false);
 					polyglot.translations.Add(element);
 				}
 	        }
+			// If you click the button to add new translation
+			if (GUILayout.Button("Add New Translation (DropDown)"))
+			{
+				// Create new categories (selected)
+				Categories c = new Categories(selectedLanguageCategories, polyglot.languagesCategories[selectedLanguageCategories].ToString());
+
+				// Try get a shared id between brothers translations
+				Vector2Int idE = GetIdElements();
+
+				// If there is no shared id available
+				if (idE.y == 0)
+				{
+					// Create new shared id
+					IdElements idElement = new IdElements(true, polyglot.idElements.Count);
+					polyglot.idElements.Add(idElement);
+				}
+
+				// idE.x = id available (Line: 260)
+				// Creates the new translation in all available languages
+				for (int i = 0; i < polyglot.languages.Count; i++) {
+					Translation element = new Translation(i, "Item Id", "Translation here", idE.x, c, true);
+					polyglot.translations.Add(element);
+				}
+			}
+			GUILayout.EndHorizontal();
 	        GUILayout.EndVertical();
             #endregion
 

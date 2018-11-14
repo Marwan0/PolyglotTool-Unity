@@ -24,12 +24,12 @@ namespace Polyglot{
                     ie.inUse = false;
         }
 
-        public List<Translation> AutoComplete(string name)
+		public List<Translation> AutoComplete(string name, bool isDropdown)
         {
             List<Translation> elementsFind = new List<Translation> ();
             foreach(Translation t in translations)
             {
-                if (t.nameID.Contains(name) && t.indexLanguage == 0 && t.nameID != name)
+				if (t.nameID.Contains(name) && t.indexLanguage == 0 && t.nameID != name && t.isDropdown == isDropdown)
                     elementsFind.Add(t);
             }
             return elementsFind;

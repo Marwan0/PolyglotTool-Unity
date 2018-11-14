@@ -13,11 +13,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedLanguage: 0
   selectedLanguageCategories: 0
-  translations: []
+  translations:
+  - indexLanguage: 0
+    nameID: ExampleID
+    translation: Text
+    idUniqueElements: 0
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 1
+    nameID: ExampleID
+    translation: Texto
+    idUniqueElements: 0
+    isDropdown: 0
+    dropdownTranslation: []
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 0
+    nameID: Item Id
+    translation: Translation here
+    idUniqueElements: 1
+    isDropdown: 1
+    dropdownTranslation:
+    - Option 0
+    - Option 1
+    - Option 2
+    categories:
+      index: 0
+      name: Menu
+  - indexLanguage: 1
+    nameID: Item Id
+    translation: Translation here
+    idUniqueElements: 1
+    isDropdown: 1
+    dropdownTranslation:
+    - "Op\xE7\xE3o 0"
+    - "Op\xE7\xE3o 1"
+    - "Op\xE7\xE3o 2"
+    categories:
+      index: 0
+      name: Menu
   languages:
   - English
   - Portuguese
   languagesCategories:
   - Menu
   - Game
-  idElements: []
+  idElements:
+  - inUse: 1
+    id: 0
+  - inUse: 1
+    id: 1

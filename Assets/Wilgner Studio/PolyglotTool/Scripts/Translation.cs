@@ -3,6 +3,7 @@
 * Contributors: N0BODE
 */
 using System;
+using System.Collections.Generic;
 
 namespace Polyglot
 {
@@ -13,16 +14,19 @@ namespace Polyglot
 		public string nameID;
 		public string translation;
 		public int idUniqueElements;
+		public bool isDropdown = false;
+		public List<string> dropdownTranslation = new List<string> ();
 		public Categories categories;
 
 
-		public Translation(int indexLanguage, string nameID, string translation, int idUniqueElements, Categories categories)
+		public Translation(int indexLanguage, string nameID, string translation, int idUniqueElements, Categories categories, bool isDropdown)
 		{
 			this.indexLanguage = indexLanguage;
 			this.nameID = nameID;
 			this.translation = translation;
 			this.categories = categories;
 			this.idUniqueElements = idUniqueElements;
+			this.isDropdown = isDropdown;
 		}
 	}
 }

@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 using UnityEditorInternal;
 using Polyglot;
+#if TMP
+using TMPro;
+#endif
 
 [CustomEditor(typeof(FindTranslation))]
 public class FindTranslationEditor : Editor
@@ -38,17 +42,25 @@ public class FindTranslationEditor : Editor
         {
             if (findTranslation.polyglot != null)
             {
+				script.ApplyModifiedProperties();
                 if (nameId != null)
                 {
-                    autoCompleteList = findTranslation.polyglot.AutoComplete(findTranslation.nameId);
+					bool isDd = false;
+					if (findTranslation.GetComponent<Dropdown> ())
+						isDd = true;
+					#if TMP
+					if (findTranslation.GetComponent<TMP_Dropdown> ())
+						isDd = true;
+					#endif
+
+					autoCompleteList = findTranslation.polyglot.AutoComplete(findTranslation.nameId, isDd);
                 }
                 else
                 {
                     autoCompleteList.Clear();
                 }
             }
-
-            script.ApplyModifiedProperties();
+            
         }
     }
 
