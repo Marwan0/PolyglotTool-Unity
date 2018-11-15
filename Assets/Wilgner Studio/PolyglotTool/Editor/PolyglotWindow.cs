@@ -485,6 +485,8 @@ namespace Polyglot.Editor
         // Save all data of Windows in ScriptableObject set in the Path
 	    void SaveChanges()
 		{
+			if(!Directory.Exists("Assets/Resources"))  
+				Directory.CreateDirectory("Assets/Resources");
 			polyglot.selectedLanguage = this.selectedLanguage;
 			polyglot.selectedLanguageCategories = this.selectedLanguageCategories;
 			AssetDatabase.CreateAsset(polyglot, this.GetSaveLocalPath());

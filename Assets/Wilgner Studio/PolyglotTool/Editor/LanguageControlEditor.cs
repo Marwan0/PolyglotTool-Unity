@@ -27,8 +27,10 @@ public class LanguageControlEditor : Editor
         script.Update();
         EditorGUI.BeginChangeCheck();
         this.languageControl.polyglot = AssetDatabase.LoadAssetAtPath<PolyglotSave>(languageControl.GetSaveLocalPath());
-
-        languageControl.selectedLanguage = EditorGUILayout.Popup("Selected Languages: ", languageControl.selectedLanguage, languageControl.polyglot.languages.ToArray());
+		if (this.languageControl.polyglot != null)
+			languageControl.selectedLanguage = EditorGUILayout.Popup ("Selected Languages: ", languageControl.selectedLanguage, languageControl.polyglot.languages.ToArray ());
+		else
+			GUILayout.Label ("Polyglot Save was not found!");
         EditorGUILayout.PropertyField(LanguageChanged);
 
         if (EditorGUI.EndChangeCheck())
