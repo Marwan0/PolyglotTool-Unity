@@ -178,6 +178,10 @@ namespace Polyglot.Editor
 	            {
 					if(EditorUtility.DisplayDialog("Delete Language", string.Format(@"Are you sure you want to delete the {0} language and all data together?", polyglot.languages[selectedLanguage]), "Yes", "No"))
 					{
+						foreach(Translation t in polyglot.translations.ToArray()){
+							if(t.indexLanguage == selectedLanguage)
+								polyglot.translations.Remove(t);
+						}
 						polyglot.languages.RemoveAt(selectedLanguage);
 						selectedLanguage = polyglot.languages.Count - 1;
 	                }
@@ -420,8 +424,17 @@ namespace Polyglot.Editor
             }
 
             // If language does not exist
-            if (exits == false)
+			if (exits == false){
                 polyglot.languages.Add(name); // Add new language
+				if (polyglot.languages.Count-1 > 0) {
+					foreach (Translation t in polyglot.translations.ToArray()) {
+						if (t.indexLanguage == 0) {
+							Translation tn = new Translation(t.indexLanguage+1, t.nameID, "Translation here", t.idUniqueElements, t.categories, t.isDropdown);
+							polyglot.translations.Add (tn);
+						}
+					}
+				}
+			}
             else
                 Debug.Log(name + " language already exists");
 

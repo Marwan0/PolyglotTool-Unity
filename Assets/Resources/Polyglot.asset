@@ -13,127 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedLanguage: 0
   selectedLanguageCategories: 0
-  translations:
-  - indexLanguage: 0
-    nameID: continueId
-    translation: Continue
-    idUniqueElements: 0
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 1
-    nameID: continueId
-    translation: Continuar
-    idUniqueElements: 0
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 0
-    nameID: newGameId
-    translation: New Game
-    idUniqueElements: 1
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 1
-    nameID: newGameId
-    translation: Novo Jogo
-    idUniqueElements: 1
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 0
-    nameID: optionsId
-    translation: Options
-    idUniqueElements: 2
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 1
-    nameID: optionsId
-    translation: "Op\xE7\xF5es"
-    idUniqueElements: 2
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 0
-    nameID: creditsId
-    translation: Credits
-    idUniqueElements: 3
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 1
-    nameID: creditsId
-    translation: "Cr\xE9ditos"
-    idUniqueElements: 3
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 0
-    nameID: exitId
-    translation: Exit
-    idUniqueElements: 4
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 1
-    nameID: exitId
-    translation: Sair
-    idUniqueElements: 4
-    isDropdown: 0
-    dropdownTranslation: []
-    categories:
-      index: 0
-      name: Menu
-  - indexLanguage: 0
-    nameID: difficultyId
-    translation: Translation here
-    idUniqueElements: 5
-    isDropdown: 1
-    dropdownTranslation:
-    - Easy
-    - Medium
-    - Hard
-    categories:
-      index: 1
-      name: Options
-  - indexLanguage: 1
-    nameID: difficultyId
-    translation: Translation here
-    idUniqueElements: 5
-    isDropdown: 1
-    dropdownTranslation:
-    - "F\xE1cil"
-    - "M\xE9dio"
-    - "D\xEDficil"
-    categories:
-      index: 1
-      name: Options
+  translations: []
   languages:
   - English
-  - Portuguese
-  languagesCategories:
-  - Menu
-  - Options
+  languagesCategories: []
   idElements:
   - inUse: 1
     id: 0
@@ -147,5 +30,31 @@ MonoBehaviour:
     id: 4
   - inUse: 1
     id: 5
-  - inUse: 0
+  - inUse: 1
     id: 6
+  - inUse: 1
+    id: 7
+  - inUse: 1
+    id: 8
+  - inUse: 1
+    id: 9
+  - inUse: 1
+    id: 10
+  - inUse: 1
+    id: 11
+  - inUse: 1
+    id: 12
+  - inUse: 1
+    id: 13
+  - inUse: 1
+    id: 14
+  - inUse: 1
+    id: 15
+  - inUse: 1
+    id: 16
+  - inUse: 1
+    id: 17
+  - inUse: 1
+    id: 18
+  - inUse: 1
+    id: 19
